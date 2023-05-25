@@ -1,0 +1,143 @@
+@use "../abstracts/mixins" as *;
+
+// header
+
+.info-section {
+  background-color: #efefef;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+
+  &__link {
+    font-size: 14px;
+    list-style: none;
+    line-height: 1.1;
+    color: #333;
+    margin-right: 30px;
+    text-decoration: none;
+
+    &:hover {
+      transition: 0.3s ease;
+      opacity: 0.5;
+    }
+
+    @include mobile {
+      font-size: 12px;
+      margin-right: 20px;
+    }
+  }
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include mobile {
+    max-width: 648px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  img:hover {
+    transition: 0.3s ease;
+    opacity: 0.7;
+  }
+
+  &__title {
+    color: var(--color);
+    font-weight: 700;
+    user-select: none;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    margin-left: 20px;
+  }
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 120px;
+
+  @include mobile {
+    min-height: 95px;
+  }
+}
+
+.phone-number {
+  font-size: 16px;
+  line-height: 1.2;
+  margin-right: 40px;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+// Header menu open
+
+@include mobile {
+  
+  .header.menu-open {
+    height: 260px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .header:not(.menu-open) {
+    transition: 0.5s ease-in-out;
+    height: 150px;
+  }
+
+  .menu-open .nav-list__link {
+    margin-right: 10px;
+    a {
+      font-size: 13px;
+    }
+  }
+
+  .menu-open .nav-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu-open .phone-number {
+    display: block;
+    position: absolute;
+    top: 220px;
+    right: 103px;
+    font-size: 18px;
+  }
+
+  .menu-open .call-back-button {
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 213px;
+    min-height: 20px;
+    max-width: 100px;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.7s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+}

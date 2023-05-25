@@ -1,0 +1,264 @@
+@use "../abstracts/mixins" as *;
+// MAIN
+
+//SUPER CHAIR
+
+.chair {
+  &__title {
+    padding-top: 15%;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 50px;
+
+    @include mobile {
+      font-size: 38px;
+      margin-bottom: 30px;
+      padding-top: 18%;
+    }
+  }
+
+  &__info {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #fff;
+    max-width: 308px;
+
+    &:last-of-type {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.super-chair {
+  background-image: url("../img/backgrounds/super-chair.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 604px;
+
+  @include mobile {
+    background-size: cover;
+    background-position: calc(100% + 290px);
+    min-height: 354px;
+  }
+}
+
+// Offers
+
+main {
+  background-color: #efefef;
+}
+
+.offers__heading {
+  margin: 80px 0 38px 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+
+  @include mobile {
+    text-align: center;
+    font-size: 32px;
+  }
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include mobile {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.product-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 255px;
+  min-height: 363px;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 25px;
+  margin-bottom: 100px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    font-weight: 400;
+    margin: 15px 30px;
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    margin-bottom: 15px;
+  }
+
+  @include mobile {
+    width: 300px;
+    min-height: 340px;
+    margin-bottom: 30px;
+  }
+}
+
+.product-card.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Specials
+
+.specials {
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.bonus-wrapper {
+  padding: 35px 0 0 40px;
+  width: 50%;
+  min-height: 212px;
+  background-color: var(--color);
+  margin-bottom: 100px;
+
+  &:first-of-type {
+    margin-right: 30px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 25px;
+  }
+
+  &__info {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #fff;
+    max-width: 130px;
+    margin-bottom: 25px;
+  }
+
+  @include mobile {
+    margin-bottom: 50px;
+    width: 100%;
+  }
+}
+
+.email-input {
+  width: 225px;
+  min-height: 35px;
+  border-radius: 30px;
+  border: none;
+  padding: 9px 25px;
+}
+
+.bg-email {
+  background-image: url("../img/backgrounds/envelope.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 45px);
+}
+
+.bg-truck {
+  background-image: url("../img/backgrounds/track.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 45px);
+}
+
+input {
+  &::placeholder {
+    color: #c4c4c4;
+  }
+
+  &:focus {
+    outline-color: var(--color);
+  }
+}
+
+// recently-viewed
+
+.recently-viewed {
+  margin-top: 80px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 38px;
+  }
+}
+
+// popular-categories
+
+.popular-categories {
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    font-weight: 500;
+    max-width: 99px;
+    font-size: 16px;
+    line-height: 1.4;
+    padding-bottom: 30px;
+
+    @include mobile {
+      font-size: 14px;
+      padding-bottom: 25px;
+    }
+  }
+}
+
+.category-card {
+  margin: 60px 0;
+  width: 23%;
+  min-height: 253px;
+}
+
+.category-list {
+  border-top: 1px solid #efefef;
+}
+
+.category-link {
+  list-style: none;
+
+  &:first-child {
+    padding-top: 25px;
+  }
+
+  a {
+    font-size: 12px;
+    line-height: 2.3;
+    color: #828282;
+    text-decoration: none;
+
+    @include mobile {
+      font-size: 11px;
+    }
+  }
+
+  a:hover {
+    color: var(--color);
+    font-weight: 500;
+    transition: 0.3s ease;
+  }
+}

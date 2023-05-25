@@ -1,0 +1,42 @@
+@use '../abstracts/mixins' as *;
+// NAVIGATION
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    border-top: 1px solid #efefef;
+  
+  
+  &__link {
+    position: relative;
+    font-size: 16px;
+    line-height: 1.2;
+    margin-right: 40px;
+
+     a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color);
+      transition: width 0.2s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  @include mobile {
+    display: none;
+}
+}

@@ -1,0 +1,81 @@
+@use '../abstracts/mixins' as *;
+// Footer
+
+// Social icons
+
+.social-icons-section {
+  display: flex;
+  align-items: center;
+  min-height: 120px;
+  border-top: 1px solid #efefef;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .icons {
+    display: flex;
+  }
+}
+
+.icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--color);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 20px;
+  
+  &:hover {
+    opacity: 0.8;
+    transition: transform 0.3s;
+    transform: scale(1.1);
+  }
+}
+
+.instagram-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.facebook-icon {
+  width: 21px;
+  height: 20px;
+}
+
+.youtube-icon {
+  width: 22px;
+  height: 16px;
+}
+
+// Privacy
+
+.privacy-policy {
+  display: flex;
+  align-items: center;
+  background-color: #efefef;
+  min-height: 64px;
+}
+
+.privacy {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  &__info {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #828282;
+
+    @include mobile {
+      font-size: 10px;
+      line-height: 1.4;
+      width: 70%;
+    }
+  }
+}
